@@ -11,6 +11,7 @@ const statusDiv = document.getElementById('status');
 const resetButton = document.getElementById('reset-button');
 const xScoreDiv = document.getElementById('x-score');
 const oScoreDiv = document.getElementById('o-score');
+const imgSquare = document.getElementsByClassName('imgSquare');
 
 // Fonction pour changer de joueur
 function changePlayer() {
@@ -53,39 +54,45 @@ function checkWin() {
 
 // Fonction pour gérer le clic sur une case
 function handleSquareClick(event) {
-  const square = event.target;
-  const squareIndex = parseInt(square.getAttribute('data-square'));
-
-  if (board[squareIndex] || !gameActive) {
-    return;
-  }
-
-  // Mettre à jour le tableau de jeu
-  board[squareIndex] = currentPlayer;
-
-  // Mettre à jour l'affichage de la case
-  square.classList.add(`player-${currentPlayer}`);
-
-  // Vérifier s'il y a un gagnant ou un match nul
-  const winner = checkWin();
-
-  if (winner) {
-    gameActive = false;
-    if (winner === 'tie') {
-      statusDiv.textContent = 'Match nul';
-    } else {
-      statusDiv.textContent = `Le joueur ${winner} a gagné!`;
-      if (winner === 'X') {
-        xScore++;
-      } else {
-        oScore++;
-      }
-      updateScores();
+    const square = event.target;
+    const squareIndex = parseInt(square.getAttribute('data-square'));
+  
+    if (board[squareIndex] || !gameActive) {
+      return;
     }
-  } else {
-    changePlayer();
+  
+    // Mettre à jour le tableau de jeu
+    board[squareIndex] = currentPlayer;
+  
+    // Mettre à jour l'affichage de la case avec une image
+    if (currentPlayer === 'X') {
+      square.style.backgroundImage = 'url("../image/croix.png")';
+      square.style.backgroundSize = 'cover';
+    } else {
+      square.style.backgroundImage = 'url("../image/rond.png")';
+      square.style.backgroundSize = 'cover';
+    }
+  
+    // Vérifier s'il y a un gagnant ou un match nul
+    const winner = checkWin();
+  
+    if (winner) {
+      gameActive = false;
+      if (winner === 'tie') {
+        statusDiv.textContent = 'Match nul';
+      } else {
+        statusDiv.textContent = `Le joueur ${winner} a gagné!`;
+        if (winner === 'X') {
+          xScore++;
+        } else {
+          oScore++;
+        }
+        updateScores();
+      }
+    } else {
+      changePlayer();
+    }
   }
-}
 
 // Fonction pour recommencer le jeu
 function handleResetButtonClick() {
