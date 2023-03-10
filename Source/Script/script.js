@@ -9,6 +9,7 @@ let oScore = 0;
 const squares = document.querySelectorAll('.square');
 const statusDiv = document.getElementById('status');
 const resetButton = document.getElementById('reset-button');
+const resetGameButton = document.getElementById('reset-game');
 const xScoreDiv = document.getElementById('x-score');
 const oScoreDiv = document.getElementById('o-score');
 const imgSquare = document.getElementsByClassName('imgSquare');
@@ -66,10 +67,10 @@ function handleSquareClick(event) {
   
     // Mettre à jour l'affichage de la case avec une image
     if (currentPlayer === 'X') {
-      square.style.backgroundImage = 'url("../image/croix.png")';
+      square.style.backgroundImage = 'url("https://www.hebergeur-image.com/upload/31.32.137.109-640af62f0ca39.png")';
       square.style.backgroundSize = 'cover';
     } else {
-      square.style.backgroundImage = 'url("../image/rond.png")';
+      square.style.backgroundImage = 'url("https://www.hebergeur-image.com/upload/31.32.137.109-640af701f168e.png")';
       square.style.backgroundSize = 'cover';
     }
   
@@ -101,6 +102,7 @@ function handleResetButtonClick() {
   gameActive = true;
 
   squares.forEach(square => {
+    square.style.backgroundImage = '';
     square.classList.remove('player-X', 'player-O');
   });
 
@@ -113,3 +115,10 @@ squares.forEach(square => {
 });
 
 resetButton.addEventListener('click', handleResetButtonClick);
+function handleResetGameButtonClick() {
+  handleResetButtonClick();
+  xScore = 0;
+  oScore = 0;
+  updateScores()
+}
+resetGameButton.addEventListener('click', handleResetGameButtonClick);

@@ -1,3 +1,7 @@
+body{
+  text-align: center;
+  background-image: url(../Image/—Pngtree—aesthetic\ brown\ golden\ marble\ background_1412965.png);
+}
 #game-container {
     display: flex;
     flex-direction: column;
@@ -5,19 +9,21 @@
   }
   
   #board {
+    background-image: url(../Image/plateau.png);
+    background-position: center;
+    background-size: cover;
     display: grid;
+    padding: 9px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-gap: 10px;
-    width: 300px;
-    height: 300px;
+    grid-gap: 3px;
+    width: 550px;
+    height: 550px;
     border: 1px solid black;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   
   .square {
-    background-color: #eee;
-    border: 1px solid black;
     font-size: 50px;
     text-align: center;
     line-height: 90px;
@@ -25,7 +31,7 @@
   }
   
   .square:hover {
-    background-color: #ddd;
+    background-color: #dddddd44;
   }
   
   #status {
@@ -33,31 +39,34 @@
     margin-bottom: 20px;
   }
   
-  #reset-button {
+  #reset-button, #reset-game {
     font-size: 20px;
-    padding: 10px;
-    background-color: #ddd;
+    padding: 5px;
+    background-color: #9e503100;
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
-  
-  #reset-button:hover {
-    background-color: #ccc;
+  #reset-game {
+    margin-top: 5px;
+  }
+  #reset-button:hover, #reset-game:hover {
+    background-color: #0000002c;
   }
   
   #score-container {
-    margin-top: 20px;
+    margin-top: 0px;
   }
   
   table {
     border-collapse: collapse;
     width: 200px;
-    margin-bottom: 20px;
+    margin: 0 auto;
   }
   
   th,
   td {
+ 
     border: 1px solid black;
     padding: 10px;
     text-align: center;
