@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
 body{
   text-align: center;
   background-image: url(../Image/—Pngtree—aesthetic\ brown\ golden\ marble\ background_1412965.png);
@@ -47,9 +48,7 @@ body{
     border-radius: 5px;
     cursor: pointer;
   }
-  #reset-game {
-    margin-top: 5px;
-  }
+
   #reset-button:hover, #reset-game:hover {
     background-color: #0000002c;
   }
@@ -59,6 +58,7 @@ body{
   }
   
   table {
+    background-color: rgba(155, 155, 155, 0.801);
     border-collapse: collapse;
     width: 200px;
     margin: 0 auto;
@@ -70,4 +70,8 @@ body{
     border: 1px solid black;
     padding: 10px;
     text-align: center;
+  }
+  #x-score,#o-score{
+    font-family: Wallpoet, Arial, Helvetica, sans-serif;
+    font-size: larger;
   }
