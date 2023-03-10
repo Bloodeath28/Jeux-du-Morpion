@@ -68,12 +68,16 @@ function handleSquareClick(event) {
     // Mettre à jour l'affichage de la case avec une image
     if (currentPlayer === 'X') {
       square.style.backgroundImage = 'url("https://www.hebergeur-image.com/upload/31.32.137.109-640af62f0ca39.png")';
-      square.style.backgroundSize = 'cover';
+      square.style.backgroundSize = '80%';
+      square.style.backgroundPosition = 'center';
+      square.style.backgroundRepeat = 'no-repeat';
     } else {
       square.style.backgroundImage = 'url("https://www.hebergeur-image.com/upload/31.32.137.109-640af701f168e.png")';
-      square.style.backgroundSize = 'cover';
+      square.style.backgroundSize = '80%';
+      square.style.backgroundPosition = 'center';
+      square.style.backgroundRepeat = 'no-repeat';
     }
-  
+
     // Vérifier s'il y a un gagnant ou un match nul
     const winner = checkWin();
   
