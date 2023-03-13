@@ -6,7 +6,7 @@ let xScore = 0;
 let oScore = 0;
 
 // Éléments DOM
-const squares = document.querySelectorAll('.square');
+const squares = document.getElementsByClassName('.square');
 const statusDiv = document.getElementById('status');
 const resetButton = document.getElementById('reset-button');
 const resetGameButton = document.getElementById('reset-game');
