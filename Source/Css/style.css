@@ -36,6 +36,9 @@ body{
   }
   
   #status {
+    font-weight: bold;
+    background-color: rgba(171, 122, 228, 0.514);
+    padding: 3px 10px;
     font-size: 20px;
     margin-bottom: 20px;
   }
@@ -69,10 +72,17 @@ body{
   td {
  
     border: 1px solid black;
-    padding: 10px;
+    padding: 3px 10px;
     text-align: center;
   }
   #x-score,#o-score{
     font-family: Wallpoet, Arial, Helvetica, sans-serif;
     font-size: larger;
+  }
+
+  @media (max-width: 650px) {
+    #board {
+      width: 60vw;
+      height: 60vw;
+    }
   }
